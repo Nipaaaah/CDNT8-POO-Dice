@@ -10,20 +10,22 @@ export class Player {
   }
 
   // Getters
-  get_name = () => {
+  get name() {
     return this._name;
   }
 
-  get_score = () => {
+  get score() {
     return this._score;
   }
 
   // Let the player throw the cup, add the value of the cup to its score and shows its score
   play = (cup: Cup) => {
     cup.throw();
-    this._score += cup.get_value();
+    this._score += cup.value;
 
+    console.log(`${this._name} does ${cup.value}.`)
     this.show_score();
+    console.log('')
   }
 
   // Show current score of the player

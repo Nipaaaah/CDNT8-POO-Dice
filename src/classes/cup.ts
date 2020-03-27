@@ -17,7 +17,7 @@ export class Cup {
   }
 
   // Getter
-  public get_value = () => {
+  public get value() {
     return this._value;
   }
 
@@ -29,11 +29,9 @@ export class Cup {
 
     this._dices.map(d => {
       d.throw();
-      let value = d.get_value();
+      let value = d.value;
       this._value += value;
     })
-
-    this.show_score();
   }
 
   // Shows the value of the cup

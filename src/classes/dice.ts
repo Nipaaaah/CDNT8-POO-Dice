@@ -7,7 +7,7 @@ export class Dice {
   }
 
   // Getter
-  public get_value = () => {
+  public get value() {
     return this._value;
   }
 

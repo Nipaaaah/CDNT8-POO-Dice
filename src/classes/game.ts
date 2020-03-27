@@ -27,7 +27,7 @@ export class Game {
     console.log(`Game starts !  It will last for ${this._nb_turns} turns !`)
     console.log('Players for this game are:');
     this._players.map(p => {
-      console.log(p.get_name());
+      console.log(p.name);
     })
 
     console.log('')
@@ -36,7 +36,7 @@ export class Game {
       console.log(`Turn ${i}: `)
 
       this._players.map(p => {
-        console.log(`${p.get_name()} throws the cup`)
+        console.log(`${p.name} throws the cup.`)
         p.play(this._cup);
       })
     }
@@ -46,16 +46,16 @@ export class Game {
   public show_winner = () => {
     console.log("End of the game");
 
-    let score = this._players[0].get_score();
+    let score = this._players[0].score;
     let winner = this._players[0];
 
     this._players.map(p => {
-      if (p.get_score() > score) {
-        score = p.get_score();
+      if (p.score > score) {
+        score = p.score;
         winner = p;
       }
     })
 
-    console.log(`Winner is: ${winner.get_name()}`)
+    console.log(`Winner is: ${winner.name}`)
   }
 }
